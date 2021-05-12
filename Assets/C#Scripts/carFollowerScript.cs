@@ -10,9 +10,9 @@ public class carFollowerScript : MonoBehaviour
     private Transform destinationRotateTowards; //Target to rotate towards
 
     [SerializeField]
-    float movementSpeed = 9f;
+    float movementSpeed; 
     [SerializeField]
-    float rotationSpeed = 6f;
+    float rotationSpeed;
 
 
     void Start()

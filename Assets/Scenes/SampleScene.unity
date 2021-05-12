@@ -655,8 +655,8 @@ Light:
     m_Resolution: -1
     m_CustomResolution: -1
     m_Strength: 1
-    m_Bias: 0.05
-    m_NormalBias: 0.4
+    m_Bias: 0
+    m_NormalBias: 0
     m_NearPlane: 0.2
     m_CullingMatrixOverride:
       e00: 1
@@ -1109,7 +1109,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &963194225
 GameObject:
@@ -1122,6 +1122,7 @@ GameObject:
   - component: {fileID: 963194228}
   - component: {fileID: 963194227}
   - component: {fileID: 963194226}
+  - component: {fileID: 963194229}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1187,13 +1188,28 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
-  m_LocalRotation: {x: 0.17126963, y: 0.8091922, z: -0.2866965, w: 0.48340443}
-  m_LocalPosition: {x: -430.05167, y: 20.92096, z: 19.677666}
+  m_LocalRotation: {x: 0.1579515, y: 0.7031312, z: -0.1649292, w: 0.6733915}
+  m_LocalPosition: {x: -425.89563, y: 17.280437, z: 6.0682282}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 30.226, y: 90, z: 0}
+--- !u!114 &963194229
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 963194225}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58daa8b39968c49118ce89f26c64211a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetToFollow: {fileID: 543450652559161897}
+  SmoothSpeed: 0.125
+  CameraOffset: {x: 0, y: 10, z: 0}
 --- !u!1 &1152415165
 GameObject:
   m_ObjectHideFlags: 0
@@ -1906,7 +1922,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &2087140453
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1920,8 +1936,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetToFollow: {fileID: 1571976466}
-  movementSpeed: 6
-  rotationSpeed: 6
+  movementSpeed: 0
+  rotationSpeed: 0
 --- !u!54 &2087140454
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2248,7 +2264,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66fea9154b5664fcf93c82f2010c6ecd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  truckSpeed: 9
+  truckSpeed: 2
 --- !u!1 &1045583133814750171
 GameObject:
   m_ObjectHideFlags: 0
@@ -2979,7 +2995,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &5342083465996832800
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2993,8 +3009,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetToFollow: {fileID: 628127586}
-  movementSpeed: 6
-  rotationSpeed: 6
+  movementSpeed: 0
+  rotationSpeed: 0
 --- !u!4 &5397153941812110700
 Transform:
   m_ObjectHideFlags: 0

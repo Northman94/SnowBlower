@@ -8,16 +8,14 @@ public class TruckMovementManagerScript : MonoBehaviour
     private float truckSpeed;
 
 
-    private Vector3 touchPosition;
-    private Rigidbody rb;
-    private Vector3 direction;
-    private float moseSpeed;
+    private Touch touch;
+    
+    private Quaternion rotationY;
+    private Quaternion straighten;
+
+    private float rotationSpeed = 0.05f;
 
 
-    void Start()
-    {
-        rb = GetComponent<Rigidbody>();   
-    }
 
     // Used for Physics
     private void FixedUpdate()
@@ -31,21 +29,11 @@ public class TruckMovementManagerScript : MonoBehaviour
     {
         if (Input.touchCount > 0)
         {
-            Touch touch = Input.GetTouch(0);
+            touch = Input.GetTouch(0);
+            
+            rotationY = Quaternion.Euler(0f, touch.deltaPosition.x * rotationSpeed, 0f);
 
-            touchPosition = Camera.main.ScreenToWorldPoint(touch.position);
-
-            touchPosition.y = 0;
-
-            direction = (touchPosition - transform.position);
-
-            rb.velocity = new Vector3(direction.x, 0, direction.z) * moseSpeed;
-
-
-            if (touch.phase == TouchPhase.Ended)
-            {
-                rb.velocity = Vector3.zero;
-            }
+            transform.rotation = rotationY * transform.rotation;
         }
     }
 }
