@@ -11,19 +11,8 @@ public class TruckCollisionManagerScript : MonoBehaviour
 
     private string colObjTag = null;
 
- 
+    public TimeManagerScript timeScript;
 
-
-    void Start()
-    {
-
-    }
-
-
-    void Update()
-    {
-
-    }
 
 
 
@@ -44,7 +33,7 @@ public class TruckCollisionManagerScript : MonoBehaviour
         {
             Debug.Log("Finish!!!");
 
-            timeStoper();
+            timeScript.slowdownTime = true;
         }
 
 
@@ -57,23 +46,9 @@ public class TruckCollisionManagerScript : MonoBehaviour
 
         if (colObjTag == finishTag)
         {
-            Debug.Log("Finish!!!");
+            Debug.Log("Finish!!!2");
 
-            timeStoper();
+            timeScript.slowdownTime = true;
         }
-    }
-
-
-    float timeScale = 1;
-
-    private void timeStoper()
-    {
-        while (Time.timeScale > 0)
-        {
-            timeScale -= 0.1f;
-
-            Time.timeScale = timeScale;
-        }
-    }
-    
+    }   
 }
