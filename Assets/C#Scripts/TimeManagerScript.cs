@@ -11,11 +11,17 @@ public class TimeManagerScript : MonoBehaviour
 
 
 
-    private void Update()
+     void Update()
     {
         if (slowdownTime == true)
         {
-            Time.timeScale -= 0.02f;
+            Time.timeScale -= 0.005f;
+        }
+
+        if (Time.timeScale <= 0.1)
+        {
+            Time.timeScale = 0;
+            slowdownTime = false;
         }
     }
 

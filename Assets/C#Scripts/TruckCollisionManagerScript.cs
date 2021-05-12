@@ -25,18 +25,8 @@ public class TruckCollisionManagerScript : MonoBehaviour
         {
             Debug.Log($"Game Over!");
 
-            Time.timeScale = 0;
-        }
-
-
-        if (colObjTag == finishTag)
-        {
-            Debug.Log("Finish!!!");
-
             timeScript.slowdownTime = true;
         }
-
-
     }
 
 
@@ -46,7 +36,7 @@ public class TruckCollisionManagerScript : MonoBehaviour
 
         if (colObjTag == finishTag)
         {
-            Debug.Log("Finish!!!2");
+            Debug.Log("Finish!!!");
 
             timeScript.slowdownTime = true;
         }
