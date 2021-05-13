@@ -13,9 +13,9 @@ public class TruckCollisionManagerScript : MonoBehaviour
 
     public TimeManagerScript timeScript;
 
+    public UIScript uiScript;
 
-
-
+    // Game Over
     private void OnCollisionEnter(Collision collision)
     {
         colObjTag = collision.gameObject.tag;
@@ -26,10 +26,12 @@ public class TruckCollisionManagerScript : MonoBehaviour
             Debug.Log($"Game Over!");
 
             timeScript.slowdownTime = true;
+
+            uiScript.gameDelayedRestart();
         }
     }
 
-
+    // Finish Line
     private void OnTriggerEnter(Collider other)
     {
         colObjTag = other.gameObject.tag;
