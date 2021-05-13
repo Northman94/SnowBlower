@@ -7,12 +7,8 @@ public class TruckMovementManagerScript : MonoBehaviour
     [SerializeField]
     private float truckSpeed;
 
-
     private Touch touch;
-    
     private Quaternion rotationY;
-    private Quaternion straighten;
-
     private float rotationSpeed = 0.05f;
 
 
@@ -20,7 +16,7 @@ public class TruckMovementManagerScript : MonoBehaviour
     // Used for Physics
     private void FixedUpdate()
     {
-        transform.Translate(Vector3.forward * truckSpeed * Time.deltaTime, Space.Self);
+       transform.Translate(Vector3.forward * truckSpeed * Time.deltaTime, Space.Self);
     }
 
 

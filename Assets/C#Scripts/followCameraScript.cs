@@ -5,21 +5,21 @@ using UnityEngine;
 public class followCameraScript : MonoBehaviour
 {
     public Transform targetToFollow;
+    public Vector3 cameraOffset;
 
-    public float SmoothSpeed = 0.125f; //between 0 and 1
+    public float smoothFactor = 1f; //between 0 and 1
 
-    [SerializeField]
-    public Vector3 CameraOffset;
+
+    private void Start()
+    {
+        cameraOffset = transform.position - targetToFollow.transform.position;
+    }
 
 
     private void LateUpdate() // best for camera
     {
-        Vector3 DesiredPosition = targetToFollow.position + CameraOffset;
+        Vector3 DesiredPosition = targetToFollow.transform.position + cameraOffset;
 
-        Vector3 SmoothedPosition = Vector3.Lerp(transform.position, DesiredPosition, SmoothSpeed * Time.deltaTime);
-
-        transform.position = SmoothedPosition;
-
-        //transform.LookAt(TargetPlayer);
+        transform.position = Vector3.Lerp(transform.position, DesiredPosition, smoothFactor * Time.deltaTime);
     }
 }

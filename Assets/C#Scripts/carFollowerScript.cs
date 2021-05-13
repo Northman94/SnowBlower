@@ -10,9 +10,11 @@ public class carFollowerScript : MonoBehaviour
     private Transform destinationRotateTowards; //Target to rotate towards
 
     [SerializeField]
-    float movementSpeed; 
+    float movementSpeed; //6
     [SerializeField]
-    float rotationSpeed;
+    float rotationSpeed; //6
+
+    private Vector3 followDistance;
 
 
     void Start()
@@ -22,27 +24,45 @@ public class carFollowerScript : MonoBehaviour
 
     
     void FixedUpdate()
-    {
-        
-        
-        /*
+    { 
         // Car follower Movement
         if (transform.position != targetToFollow.transform.position)
         {
             transform.position = Vector3.MoveTowards(transform.position, targetToFollow.transform.position, movementSpeed * Time.deltaTime);
         }
+        
+
+        // Determine which direction to rotate towards:
+        // Car follower Rotation: Vector3 = Target - Camera location
+        Vector3 targetDirection = destinationRotateTowards.position - transform.position;
+        Vector3 currentState = transform.position;
+
+        
+        /*
+        //Quaternion toRotation = Quaternion.FromToRotation(transform.forward, targetDirection);
+        transform.rotation = Quaternion.LookRotation(transform.forward, transform.up);
+
+        //transform.rotation = Quaternion.Lerp(transform.rotation, toRotation, rotationSpeed * Time.time);
+
+        //.rotation = Quaternion.LookRotation(toRotation);
         */
 
-        // Car follower Rotation
-        // Determine which direction to rotate towards
-        Vector3 targetDirection = destinationRotateTowards.position - transform.position;
-
-        // Rotate the forward vector towards the target direction by one step
-        //Vector3 newDirection = Vector3.RotateTowards(transform.right, targetDirection, rotationSpeed * Time.deltaTime, 0.0f);
+        Debug.DrawRay(transform.position, targetDirection, Color.red);
 
 
-        // Calculate a rotation a step closer to the target and applies rotation to this object
-        transform.rotation = Quaternion.LookRotation(targetDirection);
+        /*
+        float step = rotationSpeed * Time.deltaTime;
+
+        Vector3 newDirection = Vector3.RotateTowards(transform.forward, targetDirection, step, 0.0F);
+
+        Debug.DrawRay(transform.position, newDirection, Color.red);
+        transform.rotation = Quaternion.LookRotation(newDirection);
+        */
+
+
         
+
+
+
     }
 }
