@@ -1,4 +1,3 @@
-using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -6,41 +5,38 @@ public class UIScript : MonoBehaviour
 {
     [SerializeField]
     private GameObject gameOverCanvas;
+    [SerializeField]
+    private GameObject canvasFinish;
 
 
     private void Start()
     {
         gameOverCanvas.SetActive(false);
+        canvasFinish.SetActive(false);
+    }
+
+    public void crashCanvasSwitch()
+    {
+        if (gameOverCanvas.activeSelf == false)
+        {
+            gameOverCanvas.SetActive(true);
+        }
+    }
+
+    public void finishCanvasSwitch()
+    {
+        if (canvasFinish.activeSelf == false)
+        {
+            canvasFinish.SetActive(true);
+        }
     }
 
 
-    public void gameDelayedRestart()
+    // Via Editor through Ui Buttons
+    public void Restart()
     {
-        Debug.Log("Delay");
-        StartCoroutine("Restart", 3f);
-    }
-
-    public void gameInstantRestart()
-    {
-        Debug.Log("Instant");
-        StartCoroutine("Restart", 0f);
-    }
-
-
-    IEnumerator Restart(float restartTime)
-    {
-        Debug.Log("IEnumerator");
-
-        yield return new WaitForSeconds(restartTime); //Count is the amount of time in seconds that you want to wait.
+        Debug.Log("Restart");
 
         SceneManager.LoadScene("GameScene");
-        //And here goes your method of resetting the game...
-
-
-        yield return null;
     }
-
-
-
-
 }

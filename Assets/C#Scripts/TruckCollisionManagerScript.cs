@@ -1,8 +1,4 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-
 
 public class TruckCollisionManagerScript : MonoBehaviour
 {
@@ -27,7 +23,7 @@ public class TruckCollisionManagerScript : MonoBehaviour
 
             timeScript.slowdownTime = true;
 
-            uiScript.gameDelayedRestart();
+            uiScript.crashCanvasSwitch();
         }
     }
 
@@ -41,6 +37,8 @@ public class TruckCollisionManagerScript : MonoBehaviour
             Debug.Log("Finish!!!");
 
             timeScript.slowdownTime = true;
+
+            uiScript.finishCanvasSwitch();
         }
     }   
 }

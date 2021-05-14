@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class carFollowerScript : MonoBehaviour
@@ -37,32 +35,7 @@ public class carFollowerScript : MonoBehaviour
         Vector3 targetDirection = destinationRotateTowards.position - transform.position;
         Vector3 currentState = transform.position;
 
-        
-        /*
-        //Quaternion toRotation = Quaternion.FromToRotation(transform.forward, targetDirection);
-        transform.rotation = Quaternion.LookRotation(transform.forward, transform.up);
-
-        //transform.rotation = Quaternion.Lerp(transform.rotation, toRotation, rotationSpeed * Time.time);
-
-        //.rotation = Quaternion.LookRotation(toRotation);
-        */
-
-        Debug.DrawRay(transform.position, targetDirection, Color.red);
-
-
-        /*
-        float step = rotationSpeed * Time.deltaTime;
-
-        Vector3 newDirection = Vector3.RotateTowards(transform.forward, targetDirection, step, 0.0F);
-
-        Debug.DrawRay(transform.position, newDirection, Color.red);
-        transform.rotation = Quaternion.LookRotation(newDirection);
-        */
-
-
-        
-
-
-
+     
+        //Debug.DrawRay(transform.position, targetDirection, Color.red);
     }
 }

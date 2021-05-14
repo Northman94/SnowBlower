@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class TruckMovementManagerScript : MonoBehaviour
@@ -18,7 +16,6 @@ public class TruckMovementManagerScript : MonoBehaviour
     {
        transform.Translate(Vector3.forward * truckSpeed * Time.deltaTime, Space.Self);
     }
-
 
 
     private void Update()
