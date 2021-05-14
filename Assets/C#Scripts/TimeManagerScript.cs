@@ -6,9 +6,18 @@ public class TimeManagerScript : MonoBehaviour
 
     public bool slowdownTime = false;
 
+    private void Start()
+    {
+        Time.timeScale = 0;
+    }
 
+    public void PushTime()
+    {
+        Time.timeScale = 1;
+    }
 
-     void Update()
+    //Lowing down time
+    void Update()
     {
         if (slowdownTime == true)
         {

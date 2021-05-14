@@ -4,13 +4,17 @@ using UnityEngine.SceneManagement;
 public class UIScript : MonoBehaviour
 {
     [SerializeField]
+    private GameObject startCanvas;
+    [SerializeField]
     private GameObject gameOverCanvas;
     [SerializeField]
     private GameObject canvasFinish;
 
+ 
 
     private void Start()
     {
+        startCanvas.SetActive(true);
         gameOverCanvas.SetActive(false);
         canvasFinish.SetActive(false);
     }
@@ -29,6 +33,11 @@ public class UIScript : MonoBehaviour
         {
             canvasFinish.SetActive(true);
         }
+    }
+
+    public void startCanvasOff()
+    {
+        startCanvas.SetActive(false);
     }
 
 
